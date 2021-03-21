@@ -1,1 +1,12 @@
-//
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+$theme-colors: (
+  "orange": #ff2d20,
+);
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
