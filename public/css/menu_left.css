@@ -1,0 +1,31 @@
+.menu_left {
+	font-size: 17px;
+	padding-top:40px;
+}
+.menu_left ul {
+	list-style:none;
+	padding:0px;
+	margin:0px;
+}
+.menu_left li {
+	padding:10px;
+}
+.menu_left a:hover {
+	text-decoration:none;
+	color: #F84016;
+}
+#itens {
+	display:none;
+}
+#itens a {
+	color: #F84016;
+}
+#itens a:hover {
+	color: #48B3CA;
+}
+#itens ul {
+	margin-left:15px;
+}
+#itens li {
+	padding:7px;
+}

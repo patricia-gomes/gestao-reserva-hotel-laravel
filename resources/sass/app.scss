@@ -5,7 +5,9 @@
 @import 'variables';
 
 $theme-colors: (
-  "orange": #ff2d20,
+  "orange": $orange,
+  "warning": $warning,
+  "info": $info,
 );
 
 // Bootstrap

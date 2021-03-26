@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Sistema de Reservas de Hotel</title>
+	<title>Login | Sistema de Reserva de Hotel</title>
 	<!-- Font Awesome Icons -->
 	<script src="https://kit.fontawesome.com/0f9963a2b8.js" crossorigin="anonymous"></script>
 	<!-- CSS Login -->
