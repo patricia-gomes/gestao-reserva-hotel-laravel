@@ -5649,8 +5649,8 @@ a.badge-orange.focus {
 
 .alert {
   position: relative;
-  padding: 0.75rem 1.25rem;
-  margin-bottom: 1rem;
+  padding: 0.3rem 0.3rem;
+  margin-bottom: 0.2rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;
 }
@@ -5664,7 +5664,7 @@ a.badge-orange.focus {
 }
 
 .alert-dismissible {
-  padding-right: 3.85rem;
+  padding-right: 1.95rem;
 }
 
 .alert-dismissible .close {
@@ -5672,7 +5672,7 @@ a.badge-orange.focus {
   top: 0;
   right: 0;
   z-index: 2;
-  padding: 0.75rem 1.25rem;
+  padding: 0.3rem 0.3rem;
   color: inherit;
 }
 

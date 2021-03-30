@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -8,6 +9,11 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
+                    @if(session('warning'))
+                        @alert
+                            {{session('warning')}}
+                        @endalert
+                    @endif
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 

@@ -11,13 +11,21 @@
 |
 */
 
-//Site
-Route::get('/', 'Site\HomeController@index');
+
+//Login
+Route::get('/login', 'Auth\LoginController@index')->name('login');
+Route::post('/login', 'Auth\LoginController@authenticate');
+//Deslogar
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+
+//Registrar um novo usuário
+Route::get('/register', 'Auth\RegisterController@index')->name('register');
+Route::post('register', 'Auth\RegisterController@register');
 
 //Admin
 Route::prefix('/admin')->group(function() {
 
-	Route::get('/', 'Admin\HomeController@index');
+	Route::get('/', 'Admin\HomeController@index')->name('admin');
 });
 Auth::routes();
 

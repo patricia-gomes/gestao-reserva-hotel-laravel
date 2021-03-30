@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -48,7 +49,7 @@
 			<ul>
 				<a href="#"><li>Home</li></a>
 				<a href="#"><li>Reservas</li></a>
-				<a href="#"" onclick="open_div()"><li>Cadastrar <img src="{{ asset('images/arrow-down.png') }}" ></li></a>
+				<a href="#" onclick="open_div()"><li>Cadastrar <img src="{{ asset('images/arrow-down.png') }}" ></li></a>
 				<div id="itens" >
 					<ul>
 						<a href="#"><li>Cadastrar Hóspedes</li></a>
@@ -59,6 +60,7 @@
 				<a href="#"><li>Hóspedes</li></a>
 				<a href="#"><li>Calendário</li></a>
 				<a href="#"><li>Configurações</li></a>
+				<a href="/logout"><li>Sair</li></a>
 			</ul> 
 		</div><!--- Menu Left ./ --->
 		<!---- Cards ---->

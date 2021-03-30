@@ -9,6 +9,10 @@ $theme-colors: (
   "warning": $warning,
   "info": $info,
 );
+//Alerts
+$alert-padding-y: 0.3rem;
+$alert-padding-x: 0.3rem;
+$alert-margin-bottom: 0.2rem;
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
