@@ -10,6 +10,13 @@
 .menu_left li {
 	padding:10px;
 }
+.link {
+	color: #3490dc;
+	cursor: pointer;
+}
+.link a:hover {
+	text-decoration: underline;
+}
 .menu_left a:hover {
 	text-decoration:none;
 	color: #F84016;

@@ -1,8 +1,11 @@
 @extends('layouts.admin')
 
-@section('title', 'Sistema de gestão de reserva de hotel')
+@section('title', 'Acomodações')
 
 @section('content')
+	<div class="col-10">
+		<h1>Todas  as acomodações</h1><br/>
+	</div>
 
 	@if(count($accommodations) > 0)
 		@foreach($accommodations as $item)

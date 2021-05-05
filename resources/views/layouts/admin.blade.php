@@ -6,7 +6,9 @@
 	<title>@yield('title')</title>
 	<!-- Font Awesome Icons -->
 	<script src="https://kit.fontawesome.com/0f9963a2b8.js" crossorigin="anonymous"></script>
-	<!--- CSS Navbar	-->
+	<!--- CSS NavBar -->
+	<link rel="stylesheet" href="{{ asset('css/header.css') }}">
+	<!--- CSS Menu Left	-->
 	<link rel="stylesheet" href="{{ asset('css/menu_left.css') }}" >
 	<!--- CSS Content	-->
 	<link rel="stylesheet" href="{{ asset('css/content.css') }}" >
@@ -35,8 +37,8 @@
 	  <div class="collapse navbar-collapse">
 	    <ul class="navbar-nav mr-auto"></ul>
 		
-	    <div class="my-2 my-lg-0">
-			<a class="navbar-brand" href="#"> <i class="fa fa-user" title="Usuário"></i> </a>
+	    <div class="my-2 my-lg-0 user_name">
+			{{ Auth::user()->name }}  <a class="navbar-brand" href="#"> <i class="fa fa-user" title="Usuário"></i> </a>
 	    </div>
 	  </div>
 	</nav><!------- Navbar./ ------->
@@ -47,24 +49,25 @@
 		<!--- Menu Left --->
 		<div class="col-2 menu_left" >
 			<ul>
-				<a href="#"><li>Home</li></a>
+				<a href="/admin"><li>Home</li></a>
 				<a href="#"><li>Reservas</li></a>
-				<a href="#" onclick="open_div()"><li>Cadastrar <img src="{{ asset('images/arrow-down.png') }}" ></li></a>
+				<li class="link" onclick="open_div()">Cadastrar <img src="{{ asset('images/arrow-down.png') }}" ></li>
 				<div id="itens" >
 					<ul>
 						<a href="#"><li>Cadastrar Hóspedes</li></a>
-						<a href="#"><li>Cadastrar Acomodações</li></a>
+						<a href="/admin/form_accommodations"><li>Cadastrar Acomodações</li></a>
 						<a href="#"><li>Cadastrar Reservas</li></a>
 					</ul>
 				</div>
 				<a href="#"><li>Hóspedes</li></a>
+				<a href="/admin/accommodations"><li>Acomodações</li></a>
 				<a href="#"><li>Calendário</li></a>
 				<a href="#"><li>Configurações</li></a>
 				<a href="/logout"><li>Sair</li></a>
 			</ul> 
 		</div><!--- Menu Left ./ --->
 		<!---- Cards ---->
-		<div class="col-10">
+		<div class="col-10 content">
 			<div class="row padding" >
 				<div class="col-10">
 					<a href="#" class="badge badge-warning">Entradas hoje</a>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Accommodation;
 
 class HomeController extends Controller
 {
@@ -26,6 +27,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.home');
+        //Busca dados de duas tabelas: types e accommodations
+        $list = Accommodation::join('types', 'types.id', '=', 'accommodations.id_type')
+               ->select('accommodations.*', 'types.name')
+               ->get();
+               
+        return view('admin.home', [
+            'accommodations' =>  $list
+        ]);
     }
 }
