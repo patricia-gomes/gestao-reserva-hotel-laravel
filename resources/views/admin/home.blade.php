@@ -8,6 +8,7 @@
 		@foreach($accommodations as $item)
 			@if($item->status == 'Disponível') 
 				<div class="col-3">
+					<a href="#">
 					<div class="card border-success mb-3" style="max-width: 18rem;min-height: 329px;">
 						<div class="card-header bg-transparent border-success">
 							<h5 class="card-title">{{ $item->number }} ({{ $item->status }})</h5>
@@ -27,9 +28,11 @@
 							</p>
 						</div>
 					</div><!---- Card./ ---->
+					</a>
 				</div>
 			 @elseif($item->status == 'Ocupado')
 				<div class="col-3">
+					<a href="#">
 					<div class="card border-danger mb-3" style="max-width: 18rem;min-height: 329px;">
 						<div class="card-header bg-transparent border-danger">
 							<h5 class="card-title">{{ $item->number }} ({{ $item->status }})</h5>
@@ -49,9 +52,11 @@
 							</p>
 						</div>
 					</div><!---- Card./ ---->
+					</a>
 				</div>
 			 @else
 				<div class="col-3">
+					<a href="#">
 					<div class="card border-warning mb-3" style="max-width: 18rem;min-height: 329px;">
 						<div class="card-header bg-transparent border-warning">
 							<h5 class="card-title">{{ $item->number }} ({{ $item->status }})</h5>
@@ -71,6 +76,7 @@
 							</p>
 						</div>
 					</div><!---- Card./ ---->
+					</a>
 				</div>
 			@endif
 		@endforeach

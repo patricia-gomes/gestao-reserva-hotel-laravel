@@ -61,7 +61,7 @@
 				</div>
 				<a href="#"><li>Hóspedes</li></a>
 				<a href="/admin/accommodations"><li>Acomodações</li></a>
-				<a href="#"><li>Calendário</li></a>
+				<a href="/admin/calendar"><li>Calendário</li></a>
 				<a href="#"><li>Configurações</li></a>
 				<a href="/logout"><li>Sair</li></a>
 			</ul> 

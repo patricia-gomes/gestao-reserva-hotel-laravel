@@ -30,9 +30,12 @@ Route::post('register', 'Auth\RegisterController@register');
 Route::prefix('/admin')->group(function() {
 
 	Route::get('/', 'Admin\HomeController@index')->name('admin');
+
 	Route::get('/accommodations', 'Admin\RegisterAccommodationsController@accommodations')->name('admin.accommodations');//Lista todas as acomodações cadastradas
 	Route::get('/form_accommodations', 'Admin\RegisterAccommodationsController@form_accommodations')->name('admin.form_accommodations');//Formulario de registro
 	Route::post('/register_accommodations', 'Admin\RegisterAccommodationsController@register')->name('admin.register');
+
+	Route::get('/calendar', 'Admin\CalendarController@index')->name('calendar');
 });
 Auth::routes();
 

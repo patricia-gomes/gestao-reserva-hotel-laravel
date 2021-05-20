@@ -13,7 +13,7 @@
 				<div class="col-3">
 					<div class="card border-success mb-3" style="max-width: 18rem;min-height: 329px;">
 						<div class="card-header bg-transparent border-success">
-							<h5 class="card-title">{{ $item->number }} ({{ $item->status }})</h5>
+							<h5 class="card-title">{{ $item->number }}</h5>
 					    </div>
 						<div class="card-body text-dark">
 							<h5 class="card-title">
@@ -35,7 +35,7 @@
 				<div class="col-3">
 					<div class="card border-danger mb-3" style="max-width: 18rem;min-height: 329px;">
 						<div class="card-header bg-transparent border-danger">
-							<h5 class="card-title">{{ $item->number }} ({{ $item->status }})</h5>
+							<h5 class="card-title">{{ $item->number }}</h5>
 					    </div>
 						<div class="card-body text-dark">
 							<h5 class="card-title">
@@ -57,7 +57,7 @@
 				<div class="col-3">
 					<div class="card border-warning mb-3" style="max-width: 18rem;min-height: 329px;">
 						<div class="card-header bg-transparent border-warning">
-							<h5 class="card-title">{{ $item->number }} ({{ $item->status }})</h5>
+							<h5 class="card-title">{{ $item->number }}</h5>
 					    </div>
 						<div class="card-body text-dark">
 							<h5 class="card-title">

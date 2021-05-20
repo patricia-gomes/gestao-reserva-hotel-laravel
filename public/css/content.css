@@ -22,3 +22,6 @@ textarea:focus, input:focus, select:focus {
 	width: 330px;
 	height: 90px;
 }
+.padding a:hover {
+	text-decoration: none;
+}

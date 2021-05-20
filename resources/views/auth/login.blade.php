@@ -9,6 +9,7 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
+        
                     @if(session('warning'))
                         @alert
                             {{session('warning')}}
