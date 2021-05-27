@@ -9,7 +9,7 @@
 
 	@if(count($accommodations) > 0)
 		@foreach($accommodations as $item)
-			@if($item->status == 'Disponível') 
+			@if($item->status == 1) 
 				<div class="col-3">
 					<div class="card border-success mb-3" style="max-width: 18rem;min-height: 329px;">
 						<div class="card-header bg-transparent border-success">
@@ -22,6 +22,7 @@
 							<p class="card-text" >
 								<div class="info">
 									<ul>
+										<li>ID: {{ $item->id }}</li>
 										<li>Acomoda: {{ $item->accommodates }}</li>
 										<li>Andar: {{ $item->floor }}</li>
 										<li>Descrição: {{ $item->description }}</li>
@@ -31,7 +32,7 @@
 						</div>
 					</div><!---- Card./ ---->
 				</div>
-			 @elseif($item->status == 'Ocupado')
+			 @elseif($item->status == 2)
 				<div class="col-3">
 					<div class="card border-danger mb-3" style="max-width: 18rem;min-height: 329px;">
 						<div class="card-header bg-transparent border-danger">
@@ -44,6 +45,7 @@
 							<p class="card-text" >
 								<div class="info">
 									<ul>
+										<li>ID: {{ $item->id }}</li>
 										<li>Acomoda: {{ $item->accommodates }}</li>
 										<li>Andar: {{ $item->floor }}</li>
 										<li>Descrição: {{ $item->description }}</li>
@@ -66,6 +68,7 @@
 							<p class="card-text" >
 								<div class="info">
 									<ul>
+										<li>ID: {{ $item->id }}</li>
 										<li>Acomoda: {{ $item->accommodates }}</li>
 										<li>Andar: {{ $item->floor }}</li>
 										<li>Descrição: {{ $item->description }}</li>
