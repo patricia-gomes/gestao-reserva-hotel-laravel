@@ -79,7 +79,7 @@
 		@endforeach
 	@else 
 
-		Não há acomodaões cadastradas!
+		Não há acomodações ou reservas cadastradas!
 
 	@endif
 @endsection

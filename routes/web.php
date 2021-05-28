@@ -41,6 +41,10 @@ Route::prefix('/admin')->group(function() {
 	Route::post('/register_reservations', 'Admin\RegisterReservationsController@register');
 
 	Route::get('/reservations', 'Admin\ReservationsController@index')->name('reservations');
+
+	Route::get('/form_guests', 'Admin\GuestsController@index')->name('form_guests');
+	Route::post('/register_guests', 'Admin\GuestsController@register')->name('admin.register_guests');
+	Route::get('/guests', 'Admin\GuestsController@guests')->name('guests');
 });
 Auth::routes();
 

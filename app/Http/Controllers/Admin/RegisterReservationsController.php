@@ -39,9 +39,21 @@ class RegisterReservationsController extends Controller
 
         //Se o id da acomodação não estiver vazio, vai alterar o status para reservado
         if(!empty($reservation_number)) {
-            //Edita status para 3
-            $update = Accommodation::where('id', $reservation_number)
-                    ->update(['status' => 3]);
+
+            //Busca o status do id da acomodação
+            $accommodation = Accommodation::where('id', $reservation_number)->get('status');
+
+            //Verifica se a acomodação esta disponivel
+            foreach($accommodation as $item) {  
+                //Se status for igual a 1 esta diponivel, então altera reservado (3)
+                if($item['status'] == 1) {             
+                    //Edita status para 3 (reservado)
+                    $update = Accommodation::where('id', $reservation_number)
+                            ->update(['status' => 3]);
+                } else {
+                    return redirect()->route('form_reservations')->with('warning', 'Acomodação escolhida está ocupada ou reservada!');
+                }
+            }
         }
 
         //Insere a reserva

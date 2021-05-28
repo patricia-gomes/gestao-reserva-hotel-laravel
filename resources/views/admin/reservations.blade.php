@@ -3,11 +3,9 @@
 @section('title', 'Reservas')
 
 @section('content')
-
-<div class="col-10">
-	<h1>Todas  as reservas</h1><br/>
-</div>
-
+		<div class="col-10">
+			<h1>Todas  as reservas</h1><br/>
+		</div>
 @if(count($reservations) > 0)
 	@foreach($reservations as $item)
 		<div class="col-3">
@@ -23,6 +21,7 @@
 					<p class="card-text" >
 						<div class="info">
 							<ul>
+								<li>ID:  {{ $item->id_reservation }}</li>
 								<li>Entrada:  {{ \Carbon\Carbon::parse($item->start)->format('d/m/Y')}}</li>
 								<li>Saída: {{ \Carbon\Carbon::parse($item->end)->format('d/m/Y')}}</li>
 								<li>Celular: {{ $item->cell }}</li>					
@@ -34,6 +33,8 @@
 			</a>
 		</div>
 	@endforeach
+@else
+	Não há reservas!
 @endif
 
 @endsection

@@ -10,6 +10,12 @@
 
 	<div class="col-6">
 
+		@if(session('warning'))	
+			<div class="mt-3 mb-3 p-2 alert-danger">
+				{{ session('warning') }}<br/>
+			</div>
+		@endif
+
 		@if($errors->any())	
 			<div class="mt-3 mb-3 p-2 alert-danger">	
 				@foreach($errors->all() as $error)
