@@ -45,6 +45,8 @@ Route::prefix('/admin')->group(function() {
 	Route::get('/form_guests', 'Admin\GuestsController@index')->name('form_guests');
 	Route::post('/register_guests', 'Admin\GuestsController@register')->name('admin.register_guests');
 	Route::get('/guests', 'Admin\GuestsController@guests')->name('guests');
+	Route::get('/{id}/reservation_guest', 'Admin\GuestsController@guest')->name('admin.reservation_guest');
+	Route::put('/{id}/register_reservation_guest', 'Admin\GuestsController@register_reservation_guest')->name('admin.register_reservation_guest');
+
 });
 Auth::routes();
-

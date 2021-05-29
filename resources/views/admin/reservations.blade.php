@@ -3,11 +3,12 @@
 @section('title', 'Reservas')
 
 @section('content')
+
+@if(count($reservations) > 0)
+	@foreach($reservations as $item)
 		<div class="col-10">
 			<h1>Todas  as reservas</h1><br/>
 		</div>
-@if(count($reservations) > 0)
-	@foreach($reservations as $item)
 		<div class="col-3">
 			<a href="#">
 			<div class="card border-warning mb-3" style="max-width: 18rem;min-height: 329px;">
@@ -28,6 +29,9 @@
 							</ul>
 						</div>
 					</p>
+				</div>
+				<div class="card-footer bg-transparent border-warning">					
+					<a href="{{ route('admin.reservation_guest', ['id'=>$item->id]) }}"><button type="submit" class="btn btn-primary">Hospedar</button></a>			
 				</div>
 			</div><!---- Card./ ---->
 			</a>
