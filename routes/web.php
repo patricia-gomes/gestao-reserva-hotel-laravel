@@ -48,5 +48,8 @@ Route::prefix('/admin')->group(function() {
 	Route::get('/{id}/reservation_guest', 'Admin\GuestsController@guest')->name('admin.reservation_guest');
 	Route::put('/{id}/register_reservation_guest', 'Admin\GuestsController@register_reservation_guest')->name('admin.register_reservation_guest');
 
+	Route::get('/entry_today', 'Admin\EntryExitTodayController@index')->name('admin.entry_today');
+	Route::get('/exit_today', 'Admin\EntryExitTodayController@exit')->name('admin.exit_today');
+
 });
 Auth::routes();

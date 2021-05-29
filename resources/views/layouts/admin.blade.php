@@ -70,8 +70,8 @@
 		<div class="col-10 content">
 			<div class="row padding" >
 				<div class="col-10">
-					<a href="#" class="badge badge-warning">Entradas hoje</a>
-					<a href="#" class="badge badge-info">Saídas hoje</a>
+					<a href="{{ url('/admin/entry_today') }}" class="badge badge-warning">Entradas hoje</a>
+					<a href="{{ url('/admin/exit_today') }}" class="badge badge-info">Saídas hoje</a>
 				</div>
 			</div><!-- row./ -->
 			<div class="row padding">
