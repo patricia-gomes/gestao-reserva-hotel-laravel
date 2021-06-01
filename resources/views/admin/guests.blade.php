@@ -10,6 +10,7 @@
 		</div>	
 	@foreach($guests as $item)
 		<div class="col-3">
+			<a href="{{ route('admin.form_edit_guest', ['id'=>$item->id]) }}" title="Editar">
 			<div class="card border-danger mb-3" style="max-width: 18rem;min-height: 329px;">
 				<div class="card-header bg-transparent border-danger">
 					<h5 class="card-title">{{ $item->name }}</h5>
@@ -22,7 +23,7 @@
 						<div class="info">
 							<ul>
 								<li>Celular: {{ $item->cell }}</li>
-								<li>Quant acompanhates: {{ $item->number_companions }}</li>
+								<li>Quant acompanhantes: {{ $item->number_companions }}</li>
 								<li>Entrada : {{ \Carbon\Carbon::parse($item->start)->format('d/m/Y')}}</li>
 								<li>Saída : {{ \Carbon\Carbon::parse($item->end)->format('d/m/Y')}}</li>
 								<li>Dias : {{ $item->number_days }}</li>
@@ -32,6 +33,7 @@
 					</p>
 				</div>
 			</div><!---- Card./ ---->
+			</a>
 		</div>
 	@endforeach
 @else

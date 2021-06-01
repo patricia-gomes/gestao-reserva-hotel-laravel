@@ -23,7 +23,7 @@
 				@endforeach	
 			</div>
 		@endif
-		<form method="POST"  action="/admin/register_reservations">
+		<form method="POST"  action="{{ url('/admin/register_reservations') }} ">
 			@csrf
 		  <div class="form-group">
 		    <label>Nome:</label><br/>

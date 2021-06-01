@@ -29,7 +29,7 @@ class HomeController extends Controller
     {
         //Busca dados de duas tabelas: types e accommodations
         $list = Accommodation::join('types', 'types.id', '=', 'accommodations.id_type')
-               ->select('accommodations.*', 'types.name')
+               ->select('accommodations.*', 'types.type')
                ->get();
                
         return view('admin.home', [

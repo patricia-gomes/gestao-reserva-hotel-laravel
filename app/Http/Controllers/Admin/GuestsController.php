@@ -146,4 +146,34 @@ class GuestsController extends Controller
 
         return redirect()->route('guests');
     }
+
+    public function edit($id)
+    {
+        $guest = Guest::find($id);
+
+        return view('admin.edit_guest', [
+            'guest' => $guest
+        ]);
+    }
+
+    public function register_edit(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required|string',
+            'cpf' => 'required|string',
+            'cell' => 'required|integer',
+            'number_companions' => 'required|integer'
+        ]);
+
+        if(!empty($id)) {
+            //Edita nome, cpf, celular e quantidade de acompanhantes
+            $update = Guest::where('id', $id)
+                        ->update(['name'=> $request->input('name'),
+                                  'cpf'=> $request->input('cpf'),
+                                  'cell'=> $request->input('cell'),
+                                  'number_companions'=> $request->input('number_companions')
+                            ]);
+        }
+        return redirect()->route('guests');
+    }
 }

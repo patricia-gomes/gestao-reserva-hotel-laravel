@@ -20,7 +20,7 @@ class RegisterAccommodationsController extends Controller
     {
         //Busca dados de duas tabelas: types e accommodations
         $list = Accommodation::join('types', 'types.id', '=', 'accommodations.id_type')
-               ->select('accommodations.*', 'types.name')
+               ->select('accommodations.*', 'types.type')
                ->get();
         
     	return view('admin.accommodations', [
@@ -66,6 +66,46 @@ class RegisterAccommodationsController extends Controller
             $insert->number = $number;
             $insert->quantity = $quantity;
             $insert->save();
+        }
+
+        return redirect()->route('admin.accommodations');
+    }
+
+    public function edit($id)
+    {
+        //Busca dados de duas tabelas: types e accommodations
+        $accommodations = Accommodation::join('types', 'types.id', '=', 'accommodations.id_type')
+               ->where('accommodations.id', $id)
+               ->select('accommodations.*', 'types.type')
+               ->get();
+        //Pega todos os tipos para exibir
+        $type_accommodation = Type::all();
+
+        return view('admin.edit_accommodation', [
+            'accommodations' => $accommodations,
+            'types' => $type_accommodation->toArray()
+        ]);
+    }
+
+    public function register_edit_accommodations(Request $request, $id)
+    {
+        $request->validate([
+            'types' => 'required|integer',
+            'description' => 'required|string',
+            'accommodates' => 'required|integer',
+            'floor' => 'required|integer',
+            'number' => 'required|string'
+        ]);
+
+        if(!empty($id)) {
+            //Edita alguns campos de acomodaçoes
+            $update = Accommodation::where('id', $id)
+                        ->update(['id_type'=> $request->input('types'),
+                                  'accommodates'=> $request->input('accommodates'),
+                                  'floor'=> $request->input('floor'),
+                                  'description'=> $request->input('description'),
+                                  'number'=> $request->input('number')
+                            ]);
         }
 
         return redirect()->route('admin.accommodations');

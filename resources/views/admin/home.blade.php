@@ -14,7 +14,7 @@
 					    </div>
 						<div class="card-body text-dark">
 							<h5 class="card-title">
-								Tipo: {{ $item->name }}
+								Tipo: {{ $item->type }}
 							</h5>
 							<p class="card-text" >
 								<div class="info">
@@ -37,7 +37,7 @@
 					    </div>
 						<div class="card-body text-dark">
 							<h5 class="card-title">
-								Tipo: {{ $item->name }}
+								Tipo: {{ $item->type }}
 							</h5>
 							<p class="card-text" >
 								<div class="info">
@@ -60,7 +60,7 @@
 					    </div>
 						<div class="card-body text-dark">
 							<h5 class="card-title">
-								Tipo: {{ $item->name }}
+								Tipo: {{ $item->type }}
 							</h5>
 							<p class="card-text" >
 								<div class="info">

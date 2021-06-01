@@ -39,7 +39,7 @@
 		      <input type="text" name="cell" required><br/><br/>
 		  </div>
 		  <div class="form-group">
-		    <label>Quant de acompanhates:</label><br/>
+		    <label>Quant de acompanhantes:</label><br/>
 		      <input type="radio" name="number_companions" value="0" required>
 		      <label for="0">Nenhum</label>   
 

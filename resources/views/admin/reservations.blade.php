@@ -10,7 +10,7 @@
 		</div>
 	@foreach($reservations as $item)
 		<div class="col-3">
-			<a href="#">
+			<a href="{{ route('admin.reservation_edit', ['id'=>$item->id]) }}" title="Editar">
 			<div class="card border-warning mb-3" style="max-width: 18rem;min-height: 329px;">
 				<div class="card-header bg-transparent border-warning">
 					<h5 class="card-title">{{ $item->name }}</h5>

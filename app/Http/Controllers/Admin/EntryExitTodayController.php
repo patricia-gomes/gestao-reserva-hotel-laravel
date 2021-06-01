@@ -10,6 +10,10 @@ use App\Guest;
 
 class EntryExitTodayController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     
     public function index()
     {	
