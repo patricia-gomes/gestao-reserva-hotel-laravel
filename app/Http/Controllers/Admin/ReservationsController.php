@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Reservation;
+use App\Accommodation;
 
 class ReservationsController extends Controller
 {	
@@ -45,5 +46,28 @@ class ReservationsController extends Controller
                             ->update(['name'=> $request->input('name'), 'cell'=> $request->input('cell')]);
 
         return redirect()->route('reservations');
+    }
+
+    public function cancel($id)
+    {   
+        if(!empty($id)) {
+            //Busca os dados dessa reserva especifica
+            $reservation = Reservation::find($id);
+
+            //Busca todas as acomodaçoes com esse mesmo id_reservation
+            $list = Reservation::where('id_reservation', $reservation->id_reservation)->get();
+
+            //Verificando se pode alterar o status dessa acomodaçao
+            if(count($list) == 1) {
+                //Alterando o status da acomodaçao dessa reserva
+                $update = Accommodation::where('id', $reservation->id_reservation)
+                                        ->update(['status' => 1]);
+            }
+        
+            //Deleta essa reserva
+            $delete_reservation = Reservation::where('id', $id)->delete();
+
+            return redirect()->route('reservations');
+        }
     }
 }

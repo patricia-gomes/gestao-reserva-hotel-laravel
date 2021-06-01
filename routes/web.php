@@ -56,5 +56,8 @@ Route::prefix('/admin')->group(function() {
 	Route::get('/entry_today', 'Admin\EntryExitTodayController@index')->name('admin.entry_today');
 	Route::get('/exit_today', 'Admin\EntryExitTodayController@exit')->name('admin.exit_today');
 
+	Route::get('/checkout/{id}', 'Admin\CheckOutController@finish_guest')->name('admin.finish_guest');
+	Route::get('/cancel/{id}/', 'Admin\ReservationsController@cancel')->name('admin.cancel');
+
 });
 Auth::routes();

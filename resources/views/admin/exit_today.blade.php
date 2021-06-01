@@ -32,6 +32,9 @@
 						</div>
 					</p>
 				</div>
+				<div class="card-footer bg-transparent border-warning">					
+					<a href="{{ route('admin.finish_guest', ['id'=>$item->id]) }}"><button type="submit" class="btn btn-danger">Finalizar</button></a>			
+				</div>
 			</div><!---- Card./ ---->
 			</a>
 		</div>

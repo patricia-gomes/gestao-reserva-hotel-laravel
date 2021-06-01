@@ -31,7 +31,8 @@
 					</p>
 				</div>
 				<div class="card-footer bg-transparent border-warning">					
-					<a href="{{ route('admin.reservation_guest', ['id'=>$item->id]) }}"><button type="submit" class="btn btn-primary">Hospedar</button></a>			
+					<a href="{{ route('admin.reservation_guest', ['id'=>$item->id]) }}"><button type="submit" class="btn btn-primary">Hospedar</button></a>
+					<a href="{{ route('admin.cancel', ['id'=>$item->id]) }}"><button type="submit" class="btn btn-danger">Cancelar</button></a>				
 				</div>
 			</div><!---- Card./ ---->
 			</a>

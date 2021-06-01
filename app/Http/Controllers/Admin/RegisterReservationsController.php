@@ -10,6 +10,11 @@ use App\Accommodation;
 
 class RegisterReservationsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
     	return view('admin.form_reservations');
