@@ -62,7 +62,7 @@
 				<a href="{{ url('/admin/guests') }}"><li>Hóspedes</li></a>
 				<a href="{{ url('/admin/accommodations') }}"><li>Acomodações</li></a>
 				<a href="{{ url('/admin/calendar') }}"><li>Calendário</li></a>
-				<a href="#"><li>Configurações</li></a>
+				<a href="{{ url('/admin/settings') }}"><li>Configurações</li></a>
 				<a href="{{ url('/logout') }}"><li>Sair</li></a>
 			</ul> 
 		</div><!--- Menu Left ./ --->

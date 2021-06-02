@@ -59,5 +59,7 @@ Route::prefix('/admin')->group(function() {
 	Route::get('/checkout/{id}', 'Admin\CheckOutController@finish_guest')->name('admin.finish_guest');
 	Route::get('/cancel/{id}/', 'Admin\ReservationsController@cancel')->name('admin.cancel');
 
+	Route::get('/settings', 'Admin\SettingsController@index')->name('admin.settings');
+
 });
 Auth::routes();

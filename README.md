@@ -15,7 +15,7 @@ E implementei a biblioteca [FullCalendar](https://fullcalendar.io/) para exibir 
 
 ## Login
 
-Email: admin@admin.com<br/>
+Email: admin@gmail.com<br/>
 Password: 1234<br/>
 
 ## Configurações

@@ -1,4 +1,39 @@
-CREATE TABLE `reservations` (
+#Execute nessa ordem
+
+CREATE TABLE users (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(100) NULL DEFAULT NULL,
+	`email` VARCHAR(200) NOT NULL,
+	`password` VARCHAR(100) NOT NULL,
+	`remember_token` VARCHAR(100) NULL DEFAULT NULL,
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=5
+;
+
+INSERT users (`id`, `name`, `email`, `password`) VALUES
+(1, 'Admin', 'admin@admin.com', '$2y$10$2PlC3/qaIsmB/NI4CKd3fezzhoFQ53Fvt29BMHh0nGMiTlY0Fao86');
+
+
+CREATE TABLE types (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`type` VARCHAR(50) NOT NULL,
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=5
+;
+
+INSERT types (`id`, `type`) VALUES
+(1, 'Quarto casal'),
+(2, 'Apartamento'),
+(3, 'Duplo solteiro');
+
+
+CREATE TABLE reservations (
 	`id` INT(11) NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(100) NOT NULL,
 	`cell` INT(11) UNSIGNED NOT NULL,
@@ -13,21 +48,7 @@ ENGINE=InnoDB
 AUTO_INCREMENT=3
 ;
 
-
-CREATE TABLE `users` (
-	`id` INT(11) NOT NULL AUTO_INCREMENT,
-	`name` VARCHAR(100) NULL DEFAULT NULL,
-	`email` VARCHAR(200) NOT NULL,
-	`password` VARCHAR(100) NOT NULL,
-	`remember_token` VARCHAR(100) NULL DEFAULT NULL,
-	PRIMARY KEY (`id`)
-)
-COLLATE='utf8_general_ci'
-ENGINE=InnoDB
-AUTO_INCREMENT=5
-;
-
-CREATE TABLE `accommodations` (
+CREATE TABLE accommodations (
 	`id` INT(11) NOT NULL AUTO_INCREMENT,
 	`id_type` INT(11) NOT NULL,
 	`accommodates` INT(11) NOT NULL,
@@ -47,19 +68,23 @@ COLLATE='utf8_general_ci'
 ENGINE=InnoDB
 AUTO_INCREMENT=14
 ;
--------------------------------------------------------------------------------------------------
 
-CREATE TABLE `status` (
+CREATE TABLE guests (
 	`id` INT(11) NOT NULL AUTO_INCREMENT,
-	`name` VARCHAR(50) NOT NULL,
-	PRIMARY KEY (`id`)
+	`name` VARCHAR(100) NOT NULL,
+	`cpf` VARCHAR(14) NOT NULL,
+	`cell` INT(11) NOT NULL,
+	`number_companions` INT(11) NOT NULL,
+	`id_reservation` INT(11) NOT NULL,
+	`start` DATETIME NOT NULL,
+	`end` DATETIME NOT NULL,
+	`title` VARCHAR(50) NOT NULL,
+	`number_days` INT(11) NOT NULL,
+	PRIMARY KEY (`id`),
+	INDEX `id_reservation` (`id_reservation`),
+	CONSTRAINT `guests_ibfk_1` FOREIGN KEY (`id_reservation`) REFERENCES `accommodations` (`id`)
 )
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB
+AUTO_INCREMENT=7
 ;
-
-
-
-
-
-
