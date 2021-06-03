@@ -1,4 +1,7 @@
-#Execute nessa ordem
+# Execute nessa ordem
+
+-- Cria o banco de dados --
+CREATE DATABASE IF NOT EXISTS `gestao_reserva_hotel`;
 
 CREATE TABLE users (
 	`id` INT(11) NOT NULL AUTO_INCREMENT,
