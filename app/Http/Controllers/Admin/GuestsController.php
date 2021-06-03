@@ -62,17 +62,22 @@ class GuestsController extends Controller
         	//Busca o status do id da acomodação
         	$accommodation = Accommodation::where('id', $id_reservation)->get('status');
 
-        	//Verifica se a acomodação esta disponivel
-        	foreach($accommodation as $item) {
-        		//Se status for igual a 1 esta diponivel, então altera ocupado (2)
-        		if($item['status'] == 1) {
-        			//Edita status para 2 (ocupado)
-            		$update = Accommodation::where('id', $id_reservation)
-                    					->update(['status' => 2]);
-	        	} else {
-	        		return redirect()->route('form_guests')->with('warning', 'Acomodação escolhida está ocupada ou reservada!');
-	        	}
-        	}
+            //Se retornar true significa que nao existe uma acomodaçao com esse id 
+            if(!$accommodation->isEmpty()) {
+            	//Verifica se a acomodação esta disponivel
+            	foreach($accommodation as $item) {
+            		//Se status for igual a 1 esta diponivel, então altera ocupado (2)
+            		if($item['status'] == 1) {
+            			//Edita status para 2 (ocupado)
+                		$update = Accommodation::where('id', $id_reservation)
+                        					->update(['status' => 2]);
+    	        	} else {
+    	        		return redirect()->route('form_guests')->with('warning', 'Acomodação escolhida está ocupada ou reservada!');
+    	        	}
+            	}
+            } else {
+                return redirect()->route('form_guests')->with('warning', 'Essa acomodação não existe!');
+            }
         }
 
     	//Insere o hospéde
