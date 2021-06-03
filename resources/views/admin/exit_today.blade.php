@@ -40,7 +40,7 @@
 		</div>
 	@endforeach
 @else
-	Não há nenhuma entrada para hoje!
+	Não há nenhuma saída para hoje!
 @endif
 
 @endsection
