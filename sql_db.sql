@@ -32,8 +32,7 @@ AUTO_INCREMENT=5
 
 INSERT types (`id`, `type`) VALUES
 (1, 'Quarto casal'),
-(2, 'Apartamento'),
-(3, 'Duplo solteiro');
+(2, 'Duplo solteiro');
 
 
 CREATE TABLE reservations (

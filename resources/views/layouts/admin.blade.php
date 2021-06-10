@@ -57,11 +57,13 @@
 						<a href="{{ url('/admin/form_guests') }}"><li>Cadastrar Hóspedes</li></a>
 						<a href="{{ url('/admin/form_accommodations') }}"><li>Cadastrar Acomodações</li></a>
 						<a href="{{ url('/admin/form_reservations') }}"><li>Cadastrar Reservas</li></a>
+						<a href="{{ url('/admin/form_types') }}"><li>Cadastrar Tipos Acomodações</li></a>
 					</ul>
 				</div>
 				<a href="{{ url('/admin/guests') }}"><li>Hóspedes</li></a>
 				<a href="{{ url('/admin/accommodations') }}"><li>Acomodações</li></a>
 				<a href="{{ url('/admin/calendar') }}"><li>Calendário</li></a>
+				<a href="{{ url('/admin/types') }}"><li>Tipos</li></a>
 				<a href="{{ url('/admin/settings') }}"><li>Configurações</li></a>
 				<a href="{{ url('/logout') }}"><li>Sair</li></a>
 			</ul> 
