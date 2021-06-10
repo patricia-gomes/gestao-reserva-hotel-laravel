@@ -31,6 +31,7 @@ Route::prefix('/admin')->group(function() {
 
 	Route::get('/', 'Admin\HomeController@index')->name('admin');
 
+	//Acomodaçao
 	Route::get('/accommodations', 'Admin\RegisterAccommodationsController@accommodations')->name('admin.accommodations');//Lista todas as acomodações cadastradas
 	Route::get('/form_accommodations', 'Admin\RegisterAccommodationsController@form_accommodations')->name('admin.form_accommodations');//Formulario de registro
 	Route::post('/register_accommodations', 'Admin\RegisterAccommodationsController@register')->name('admin.register');
@@ -39,12 +40,14 @@ Route::prefix('/admin')->group(function() {
 
 	Route::get('/calendar', 'Admin\CalendarController@index')->name('calendar');
 
+	//Reservas
 	Route::get('/form_reservations', 'Admin\RegisterReservationsController@index')->name('form_reservations');
 	Route::post('/register_reservations', 'Admin\RegisterReservationsController@register');
 	Route::get('/reservations', 'Admin\ReservationsController@index')->name('reservations');
 	Route::get('/reservation/{id}/edit', 'Admin\ReservationsController@edit')->name('admin.reservation_edit');
 	Route::put('/{id}/edit_reservation', 'Admin\ReservationsController@register_edit')->name('admin.register_edit');
 
+	//Hospedes
 	Route::get('/form_guests', 'Admin\GuestsController@index')->name('form_guests');
 	Route::post('/register_guests', 'Admin\GuestsController@register')->name('admin.register_guests');
 	Route::get('/guests', 'Admin\GuestsController@guests')->name('guests');
@@ -53,12 +56,23 @@ Route::prefix('/admin')->group(function() {
 	Route::get('/guest/{id}', 'Admin\GuestsController@edit')->name('admin.form_edit_guest');
 	Route::put('/guest/{id}/edit_guest', 'Admin\GuestsController@register_edit')->name('admin.register_edit_guest');
 
+	//Tipos
+	Route::get('/types', 'Admin\TypesAccommodationsController@types')->name('types');
+	Route::get('/form_types', 'Admin\TypesAccommodationsController@index')->name('admin.form_types');
+	Route::post('/register_types', 'Admin\TypesAccommodationsController@register')->name('admin.register_types');
+	Route::put('/form_edit_type/{id}', 'Admin\TypesAccommodationsController@edit')->name('admin.form_edit_type');
+	Route::put('/edit_type/{id}', 'Admin\TypesAccommodationsController@register_edit')->name('admin.edit_type');
+	Route::post('/delete_type/{id}', 'Admin\TypesAccommodationsController@delete')->name('admin.delete_type');
+
+	//Entrada/saida
 	Route::get('/entry_today', 'Admin\EntryExitTodayController@index')->name('admin.entry_today');
 	Route::get('/exit_today', 'Admin\EntryExitTodayController@exit')->name('admin.exit_today');
 
+	//Finaliza checkout
 	Route::get('/checkout/{id}', 'Admin\CheckOutController@finish_guest')->name('admin.finish_guest');
 	Route::get('/cancel/{id}/', 'Admin\ReservationsController@cancel')->name('admin.cancel');
 
+	//Configuraçoes
 	Route::get('/settings', 'Admin\SettingsController@index')->name('admin.settings');
 
 });
