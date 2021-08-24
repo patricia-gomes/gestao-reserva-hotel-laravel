@@ -16,7 +16,7 @@ class ReservationsController extends Controller
 
     public function index()
     {
-    	$list = Reservation::join('accommodations', 'accommodations.id', '=', 'reservations.id_reservation')
+    	$list = Reservation::join('accommodations', 'accommodations.id', '=', 'reservations.reservation_number')
                ->select('reservations.*', 'accommodations.number')
                ->get();              
 
@@ -54,13 +54,13 @@ class ReservationsController extends Controller
             //Busca os dados dessa reserva especifica
             $reservation = Reservation::find($id);
 
-            //Busca todas as acomodaçoes com esse mesmo id_reservation
-            $list = Reservation::where('id_reservation', $reservation->id_reservation)->get();
+            //Busca todas as acomodaçoes com esse mesmo reservation_number
+            $list = Reservation::where('reservation_number', $reservation->reservation_number)->get();
 
             //Verificando se pode alterar o status dessa acomodaçao
             if(count($list) == 1) {
                 //Alterando o status da acomodaçao dessa reserva
-                $update = Accommodation::where('id', $reservation->id_reservation)
+                $update = Accommodation::where('id', $reservation->reservation_number)
                                         ->update(['status' => 1]);
             }
         

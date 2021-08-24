@@ -6,7 +6,8 @@
 
 @if(count($list) > 0)
 		<div class="col-10">
-			<h1>Saídas hoje</h1><br/>
+			<h1>Saídas hoje</h1>
+			<p>Atenção: Os hóspedes que estiver nessa lista serão removidos automaticamente pelo sistema depois do horário de check-out às 12h.</p><br/>
 		</div>
 	@foreach($list as $item)
 		<div class="col-3">
@@ -23,7 +24,6 @@
 						<div class="info">
 							<ul>
 								<li>Tipo:  {{ $item->type }}</li>
-								<li>ID:  {{ $item->id_reservation }}</li>
 								<li>Entrada:  {{ \Carbon\Carbon::parse($item->start)->format('d/m/Y')}}</li>
 								<li>Saída: {{ \Carbon\Carbon::parse($item->end)->format('d/m/Y')}}</li>
 								<li>Celular: {{ $item->cell }}</li>			

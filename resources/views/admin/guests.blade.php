@@ -27,10 +27,12 @@
 								<li>Entrada : {{ \Carbon\Carbon::parse($item->start)->format('d/m/Y')}}</li>
 								<li>Saída : {{ \Carbon\Carbon::parse($item->end)->format('d/m/Y')}}</li>
 								<li>Dias : {{ $item->number_days }}</li>
-								<li>ID: {{ $item->id_reservation }}</li>
 							</ul>
 						</div>
 					</p>
+				</div>
+				<div class="card-footer bg-transparent border-danger">
+					<input type="submit" class="btn btn-primary" value="Editar">
 				</div>
 			</div><!---- Card./ ---->
 			</a>

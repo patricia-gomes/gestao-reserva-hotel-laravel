@@ -21,6 +21,13 @@ class GuestsController extends Controller
     	return view('admin.form_guests');
     }
 
+    public function form_guests_id($id)
+    {
+        return view('admin.form_guests_id', [
+            'id_reservation' => $id
+        ]);
+    }
+
     public function guests()
     {
     	$guests = Guest::all();
@@ -37,7 +44,6 @@ class GuestsController extends Controller
     		'cpf' => 'required|string',
     		'cell' => 'required|integer',
     		'number_companions' => 'required|integer',
-    		'id_reservation' => 'required|integer',
     		'date_entry' => 'required|date',
     		'date_exit' => 'required|date'
     	]);
@@ -46,9 +52,9 @@ class GuestsController extends Controller
     	$cpf = $request->input('cpf');
     	$cell = $request->input('cell');
     	$number_companions = $request->input('number_companions');
-    	$id_reservation = $request->input('id_reservation');
     	$date_entry = $request->input('date_entry');
     	$date_exit = $request->input('date_exit');
+        $id_reservation = $request->input('id_reservation');
 
     	//Utilizando o pacote Carbon para formatar as duas datas
         $entry = Carbon::createFromFormat('Y-m-d', $date_entry);
