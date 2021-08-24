@@ -10,8 +10,7 @@
 	@if(count($accommodations) > 0)
 		@foreach($accommodations as $item)
 			@if($item->status == 1) 
-				<div class="col-3">
-					<a href="{{ route('admin.accommodation_edit', ['id'=>$item->id]) }}" title="Editar">
+				<div class="col-3">					
 					<div class="card border-success mb-3" style="max-width: 18rem;min-height: 329px;">
 						<div class="card-header bg-transparent border-success">
 							<h5 class="card-title">{{ $item->number }}</h5>
@@ -31,8 +30,18 @@
 								</div>
 							</p>
 						</div>
+						<div class="card-footer bg-transparent border-success">							
+							<form method="POST" action="{{ route('admin.accommodation_edit', ['id'=>$item->id]) }}">
+						    	@method('PUT')
+						    	@csrf
+						    	<input type="submit" class="btn btn-success" value="Editar">
+							</form>
+							<form method="POST" action="{{ route('admin.delete_accommodation', ['id'=>$item->id]) }}">
+						    	@csrf
+						   		<td><input type="submit" class="btn btn-danger" value="Deletar"></td>
+							</form>
+						</div>
 					</div><!---- Card./ ---->
-					</a>
 				</div>
 			 @elseif($item->status == 2)
 				<div class="col-3">
@@ -55,6 +64,9 @@
 									</ul>
 								</div>
 							</p>
+						</div>
+						<div class="card-footer bg-transparent border-danger">
+							<input type="submit" class="btn btn-danger" value="Editar">
 						</div>
 					</div><!---- Card./ ---->
 					</a>
@@ -80,6 +92,9 @@
 									</ul>
 								</div>
 							</p>
+						</div>
+						<div class="card-footer bg-transparent border-warning">
+							<input type="submit" class="btn btn-warning" value="Editar">
 						</div>
 					</div><!---- Card./ ---->
 					</a>

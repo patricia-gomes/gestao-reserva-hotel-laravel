@@ -25,3 +25,7 @@ textarea:focus, input:focus, select:focus {
 .padding a:hover {
 	text-decoration: none;
 }
+.card-footer:last-child {
+	display: flex;
+	justify-content: space-evenly;
+}

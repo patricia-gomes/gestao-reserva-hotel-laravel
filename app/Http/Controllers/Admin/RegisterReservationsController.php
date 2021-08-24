@@ -20,12 +20,18 @@ class RegisterReservationsController extends Controller
     	return view('admin.form_reservations');
     }
 
+    public function form_reservations_id($id)
+    { 
+        return view('admin.form_reservations_id', [
+            'id_accomomdation' => $id
+        ]);
+    }
+
     public function register(Request $request)
     {
     	$request->validate([
     		'name' => 'required|string',
     		'cell' => 'required|integer',
-    		'reservation_number' => 'required|integer',
     		'start' => 'required|date',
     		'end' => 'required|date'
     	]);
@@ -70,7 +76,7 @@ class RegisterReservationsController extends Controller
         $insert = new Reservation();
         $insert->name = $name;
         $insert->cell = $cell;
-        $insert->id_reservation = $reservation_number;
+        $insert->reservation_number = $reservation_number;
         $insert->start = $start;
         $insert->end = $end;
         $insert->title = $name;

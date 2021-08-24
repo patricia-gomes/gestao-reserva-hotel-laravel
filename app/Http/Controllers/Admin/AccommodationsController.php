@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Accommodation;
 use App\Type;
 
-class RegisterAccommodationsController extends Controller
+class AccommodationsController extends Controller
 {
     
     public function __construct()
@@ -65,6 +65,7 @@ class RegisterAccommodationsController extends Controller
             $insert->floor = $floor;
             $insert->number = $number;
             $insert->quantity = $quantity;
+            $insert->status = 1;
             $insert->save();
         }
 
@@ -85,6 +86,16 @@ class RegisterAccommodationsController extends Controller
             'accommodations' => $accommodations,
             'types' => $type_accommodation->toArray()
         ]);
+    }
+
+    public function delete($id)
+    {
+        if(!empty($id)) {
+            //Deleta 
+            $delete_type = Accommodation::where('id', $id)->delete();
+
+            return redirect()->route('admin.accommodations');
+        }
     }
 
     public function register_edit_accommodations(Request $request, $id)

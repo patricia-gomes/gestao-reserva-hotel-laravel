@@ -19,13 +19,24 @@
 							<p class="card-text" >
 								<div class="info">
 									<ul>
-										<li>ID: {{ $item->id }}</li>
 										<li>Acomoda: {{ $item->accommodates }}</li>
 										<li>Andar: {{ $item->floor }}</li>
 										<li>Descrição: {{ $item->description }}</li>
+										<li>Status: Disponível</li>
 									</ul>
 								</div>
 							</p>
+						</div>
+						<div class="card-footer bg-transparent border-success">
+
+							<form method="POST" action="{{ route('admin.form_reservations_id', ['id'=>$item->id]) }}">
+						    	@csrf
+						    	<input type="submit" class="btn btn-warning" value="Reservar">
+							</form>
+							<form method="POST" action="{{ route('admin.form_guests_id', ['id'=>$item->id]) }}">
+						    	@csrf
+						    	<input type="submit" class="btn btn-danger" value="Hospedar">
+							</form>						
 						</div>
 					</div><!---- Card./ ---->
 				</div>
@@ -42,10 +53,10 @@
 							<p class="card-text" >
 								<div class="info">
 									<ul>
-										<li>ID: {{ $item->id }}</li>
 										<li>Acomoda: {{ $item->accommodates }}</li>
 										<li>Andar: {{ $item->floor }}</li>
 										<li>Descrição: {{ $item->description }}</li>
+										<li>Status: Ocupado</li>
 									</ul>
 								</div>
 							</p>
@@ -65,13 +76,20 @@
 							<p class="card-text" >
 								<div class="info">
 									<ul>
-										<li>ID: {{ $item->id }}</li>
 										<li>Acomoda: {{ $item->accommodates }}</li>
 										<li>Andar: {{ $item->floor }}</li>
 										<li>Descrição: {{ $item->description }}</li>
+										<li>Status: Reservado</li>
 									</ul>
 								</div>
 							</p>
+						</div>
+						<div class="card-footer bg-transparent border-warning">
+
+							<form method="POST" action="{{ route('admin.form_guests_id', ['id'=>$item->id]) }}">
+						    	@csrf
+						    	<input type="submit" class="btn btn-danger" value="Hospedar">
+							</form>
 						</div>
 					</div><!---- Card./ ---->
 				</div>
