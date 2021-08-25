@@ -34,8 +34,16 @@
 		      <input type="text" name="cell" required><br/><br/>
 		  </div>
 		  <div class="form-group">
-		    <label>ID da acomodação:</label><br/>
-		      <input type="number" name="reservation_number" required><br/><br/>
+		    <label>Acomodação:</label><br/>
+		    	<select name="reservation_number" >
+		    		@if(!empty($accommodation))
+		    			@foreach($accommodation as $items)
+			    			<option value="{{ $items->id }}" required>{{ $items->type }} {{ $items->number }}</option>
+			    		@endforeach
+			    	@else
+			    		<option>Nunhuma acomodação disponível</option>
+		    		@endif
+		    	</select>
 		  </div>
 		  <div class="form-group">
 		    <label>Data de entrada:</label><br/>

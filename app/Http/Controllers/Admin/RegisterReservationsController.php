@@ -17,7 +17,15 @@ class RegisterReservationsController extends Controller
 
     public function index()
     {
-    	return view('admin.form_reservations');
+        //Retorna as acomodaçoes disponiveis e o tipo de acomodaçao
+        $accommodation = Accommodation::where('status', 1)
+        ->join('types', 'types.id', '=', 'accommodations.id_type')
+        ->select('accommodations.id', 'accommodations.number', 'types.type')
+        ->get();
+
+    	return view('admin.form_reservations', [
+            'accommodation' => $accommodation
+        ]);
     }
 
     public function form_reservations_id($id)

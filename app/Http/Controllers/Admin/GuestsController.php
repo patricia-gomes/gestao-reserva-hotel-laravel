@@ -18,7 +18,15 @@ class GuestsController extends Controller
 
     public function index()
     {
-    	return view('admin.form_guests');
+        //Retorna as acomodaçoes disponiveis e o tipo de acomodaçao
+        $accommodation = Accommodation::where('status', 1)
+        ->join('types', 'types.id', '=', 'accommodations.id_type')
+        ->select('accommodations.id', 'accommodations.number', 'types.type')
+        ->get();
+
+    	return view('admin.form_guests', [
+            'accommodation' => $accommodation
+        ]);
     }
 
     public function form_guests_id($id)
@@ -106,8 +114,15 @@ class GuestsController extends Controller
     {
         $reservation = Reservation::find($id);
 
+        //Retorna o numero e o nome da acomodação dessa reserva em especifico
+        $accommodation = Accommodation::where('accommodations.id', $reservation['reservation_number'])
+                    ->join('types', 'types.id', '=', 'accommodations.id_type')
+                    ->select('accommodations.number', 'types.type')
+                    ->get();
+                
         return view('admin.reservation_guest', [
-            'reservation' => $reservation
+            'reservation' => $reservation,
+            'accommodation' => $accommodation
         ]);
     }
 
@@ -162,8 +177,22 @@ class GuestsController extends Controller
     {
         $guest = Guest::find($id);
 
+/*        Accommodation::join('accommodations', 'accommodations.id', '=', 'reservations.reservation_number')
+               ->join('types', 'types.id', '=', 'accommodations.id_type')
+               ->where('reservations.start', $today)
+               ->select('reservations.*', 'accommodations.number', 'types.type')
+               ->get(); */
+
+        //Retorna as acomodaçoes disponiveis e o tipo de acomodaçao
+        $accommodation = Accommodation::where('accommodations.id', $guest['id_reservation'])
+        //->join('accommodations', 'accommodations.id', '=', 'guests.id_reservation')
+        ->join('types', 'types.id', '=', 'accommodations.id_type')
+        ->select('accommodations.id', 'accommodations.number', 'types.type')
+        ->get();
+//dd($accommodation[0]);
         return view('admin.edit_guest', [
-            'guest' => $guest
+            'guest' => $guest,
+            'accommodation' => $accommodation
         ]);
     }
 
