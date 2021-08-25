@@ -84,13 +84,6 @@
 								</div>
 							</p>
 						</div>
-						<div class="card-footer bg-transparent border-warning">
-
-							<form method="POST" action="{{ route('admin.form_guests_id', ['id'=>$item->id]) }}">
-						    	@csrf
-						    	<input type="submit" class="btn btn-danger" value="Hospedar">
-							</form>
-						</div>
 					</div><!---- Card./ ---->
 				</div>
 			@endif

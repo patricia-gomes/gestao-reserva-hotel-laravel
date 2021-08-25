@@ -59,8 +59,14 @@
 			      <label for="4">4 pessoas</label>	    
 			  </div>
 			  <div class="form-group">
-			    <label>ID da acomodação:</label><br/>
-			      <input type="number" name="id_reservation" value="{{ $reservation->id_reservation }}" required><br/><br/>
+			    <label>Acomodação:</label><br/>
+			    	<select name="id_reservation" >
+			    		@if($accommodation)
+			    			@foreach($accommodation as $items)
+				    			<option value="{{ $reservation->reservation_number }}" selected required>{{ $items->type }} {{ $items->number }}</option>
+				    		@endforeach
+			    		@endif
+			    	</select>
 			  </div>
 			  <div class="form-group">
 			    <label>Data de entrada:</label><br/>
