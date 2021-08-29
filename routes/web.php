@@ -20,7 +20,7 @@ Route::prefix('/')->group(function() {
 Route::get('/login', 'Auth\LoginController@index')->name('login');
 Route::post('/login', 'Auth\LoginController@authenticate');
 //Deslogar
-Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('/logout', 'Auth\LoginController@logout');
 
 //Registrar um novo usuário
 Route::get('/register', 'Auth\RegisterController@index')->name('register');
@@ -35,7 +35,7 @@ Route::prefix('/admin')->group(function() {
 	Route::get('/accommodations', 'Admin\AccommodationsController@accommodations')->name('admin.accommodations');//Lista todas as acomodações cadastradas
 	Route::get('/form_accommodations', 'Admin\AccommodationsController@form_accommodations')->name('admin.form_accommodations');//Formulario de registro
 	Route::post('/register_accommodations', 'Admin\AccommodationsController@register')->name('admin.register');
-	Route::put('/accommodation/{id}/edit', 'Admin\AccommodationsController@edit')->name('admin.accommodation_edit');
+	Route::get('/accommodation/{id}/edit', 'Admin\AccommodationsController@edit')->name('admin.accommodation_edit');
 	Route::put('/{id}/register_edit_accommodations', 'Admin\AccommodationsController@register_edit_accommodations')->name('admin.register_edit_accommodations');
 	Route::post('/delete_accommodation/{id}', 'Admin\AccommodationsController@delete')->name('admin.delete_accommodation');
 
