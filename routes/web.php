@@ -17,7 +17,7 @@ Route::prefix('/')->group(function() {
 });
 
 //Login
-Route::get('/login', 'Auth\LoginController@index')->name('login');
+//Route::get('/login', 'Auth\LoginController@index')->name('login');
 Route::post('/login', 'Auth\LoginController@authenticate');
 //Deslogar
 Route::get('/logout', 'Auth\LoginController@logout');

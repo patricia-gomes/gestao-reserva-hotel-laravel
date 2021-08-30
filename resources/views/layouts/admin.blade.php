@@ -7,15 +7,15 @@
 	<!-- Font Awesome Icons -->
 	<script src="https://kit.fontawesome.com/0f9963a2b8.js" crossorigin="anonymous"></script>
 	<!--- CSS NavBar -->
-	<link rel="stylesheet" href="{{ asset('css/header.css') }}">
+	<link rel="stylesheet" href="{{ secure_asset('css/header.css') }}">
 	<!--- CSS Menu Left	-->
-	<link rel="stylesheet" href="{{ asset('css/menu_left.css') }}" >
+	<link rel="stylesheet" href="{{ secure_asset('css/menu_left.css') }}" >
 	<!--- CSS Content	-->
-	<link rel="stylesheet" href="{{ asset('css/content.css') }}" >
+	<link rel="stylesheet" href="{{ secure_asset('css/content.css') }}" >
 	<!--- CSS Footer	-->
-	<link rel="stylesheet" href="{{ asset('css/footer.css') }}" >
+	<link rel="stylesheet" href="{{ secure_asset('css/footer.css') }}" >
 	<!--- CSS Bootstrap -->
-	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+	<link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
 	<script>
 		function open_div() {
 			var itens = document.getElementById('itens');
@@ -96,6 +96,6 @@
 
 
 	<!-- JS do Bootstrap -->
-	<script src="{{ asset('js/app.js') }}"></script>
+	<script src="{{ secure_asset('js/app.js') }}"></script>
 </body>
 </html>
