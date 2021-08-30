@@ -1,0 +1,31 @@
+textarea, input, select {
+	border: 1 #6c757d;
+}
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 1 #6c757d;
+    outline: 0;
+}
+.content {
+	min-height:650px;
+	margin-bottom: 40px;
+}
+.padding {
+	padding-top:30px;
+}
+.info ul {
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+.textarea_form_accommodations textarea {
+	width: 330px;
+	height: 90px;
+}
+.padding a:hover {
+	text-decoration: none;
+}
+.card-footer:last-child {
+	display: flex;
+	justify-content: space-evenly;
+}

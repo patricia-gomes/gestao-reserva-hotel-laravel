@@ -1,4 +1,10 @@
 {
     "/css/app.css": "/css/app.css",
+    "/css/content.css": "/css/content.css",
+    "/css/footer.css": "/css/footer.css",
+    "/css/header.css": "/css/header.css",
+    "/css/login.css": "/css/login.css",
+    "/css/menu_left.css": "/css/menu_left.css",
+    "/css/site.css": "/css/site.css",
     "/js/app.js": "/js/app.js"
 }
