@@ -1,7 +1,1 @@
-body {
-	font-family: verdana, arial;
-	font-size: 20px;
-	color: white;
-	background-image: linear-gradient(to right, #ff47e8, #ff6a00f2);
-	text-align: center;
-}
+body{font-family:verdana,arial;font-size:20px;color:#fff;background-image:linear-gradient(90deg,#ff47e8,rgba(255,106,0,.9490196078431372));text-align:center}
