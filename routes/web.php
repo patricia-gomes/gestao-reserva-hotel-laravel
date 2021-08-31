@@ -29,7 +29,7 @@ Route::post('register', 'Auth\RegisterController@register');
 //Admin
 Route::prefix('/admin')->group(function() {
 
-	Route::get('/', 'Admin\HomeController@index')->name('admin');
+	Route::get('/', 'Admin\HomeController@index')->name("admin");
 
 	//Acomodaçao
 	Route::get('/accommodations', 'Admin\AccommodationsController@accommodations')->name('admin.accommodations');//Lista todas as acomodações cadastradas
