@@ -45,7 +45,6 @@
 				</div>
 			 @elseif($item->status == 2)
 				<div class="col-3">
-					<a href="{{ route('admin.accommodation_edit', ['id'=>$item->id]) }}" title="Editar">
 					<div class="card border-danger mb-3" style="max-width: 18rem;min-height: 329px;">
 						<div class="card-header bg-transparent border-danger">
 							<h5 class="card-title">{{ $item->number }}</h5>
@@ -66,14 +65,16 @@
 							</p>
 						</div>
 						<div class="card-footer bg-transparent border-danger">
-							<input type="submit" class="btn btn-danger" value="Editar">
+							<form method="POST" action="{{ route('admin.accommodation_edit', ['id'=>$item->id]) }}">
+								@method('PUT')
+						    	@csrf
+								<input type="submit" class="btn btn-danger" value="Editar">
+							</form>
 						</div>
 					</div><!---- Card./ ---->
-					</a>
 				</div>
 			 @else
 				<div class="col-3">
-					<a href="{{ route('admin.accommodation_edit', ['id'=>$item->id]) }}" title="Editar">
 					<div class="card border-warning mb-3" style="max-width: 18rem;min-height: 329px;">
 						<div class="card-header bg-transparent border-warning">
 							<h5 class="card-title">{{ $item->number }}</h5>
@@ -94,10 +95,13 @@
 							</p>
 						</div>
 						<div class="card-footer bg-transparent border-warning">
-							<input type="submit" class="btn btn-warning" value="Editar">
+							<form method="POST" action="{{ route('admin.accommodation_edit', ['id'=>$item->id]) }}">
+								@method('PUT')
+						    	@csrf
+								<input type="submit" class="btn btn-warning" value="Editar">
+							</form>
 						</div>
 					</div><!---- Card./ ---->
-					</a>
 				</div>
 			@endif
 		@endforeach
