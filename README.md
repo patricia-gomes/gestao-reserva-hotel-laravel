@@ -22,9 +22,10 @@ Password: 1234<br/>
 
 O código sql para criar o banco e as tabelas é o arquivo: <strong>sql_db.sql</strong><br/>
 
-<ul>
-	<li>Para configurar o banco de dados altere o nome do arquivo <strong>.env.example</strong> para <strong>.env</strong> e na opção <strong>DB_DATABASE</strong> coloque o nome do seu banco de dados e etc.</li>
-</ul>
+Para configurar o banco de dados altere o nome do arquivo <strong>.env.example</strong> para <strong>.env</strong> e na opção <strong>DB_DATABASE</strong> coloque o nome do seu banco de dados e etc.<br/>
+Altere a url para utilizar no localhost, no arquivo <strong>config/app.php</strong><br/>
+`'url' => env('APP_URL', 'http://localhost'),`<br/>
+E no arquivo <strong>.ENV</strong> também altere APP_URL para `APP_URL=http://localhost`<br/>
 
 ## Rodar a aplicação
 

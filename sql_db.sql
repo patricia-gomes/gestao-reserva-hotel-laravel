@@ -58,12 +58,9 @@ CREATE TABLE accommodations (
 	`description` TEXT NOT NULL,
 	`quantity` INT(11) NOT NULL,
 	`number` VARCHAR(50) NOT NULL,
-	`id_reservation` INT(11) NULL DEFAULT NULL,
 	`status` VARCHAR(50) NULL DEFAULT NULL,
 	PRIMARY KEY (`id`),
-	INDEX `id_reservation` (`id_reservation`),
 	INDEX `id_type` (`id_type`),
-	CONSTRAINT `accommodations_ibfk_1` FOREIGN KEY (`id_reservation`) REFERENCES `reservations` (`id`),
 	CONSTRAINT `accommodations_ibfk_2` FOREIGN KEY (`id_type`) REFERENCES `types` (`id`)
 )
 COLLATE='utf8_general_ci'
@@ -90,3 +87,4 @@ COLLATE='utf8_general_ci'
 ENGINE=InnoDB
 AUTO_INCREMENT=7
 ;
+
