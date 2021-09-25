@@ -38,10 +38,11 @@ INSERT types (`id`, `type`) VALUES
 CREATE TABLE reservations (
 	`id` INT(11) NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(100) NOT NULL,
-	`cell` INT(11) UNSIGNED NOT NULL,
+	`title` VARCHAR(60) NOT NULL,
+	`cell` BIGINT(11) UNSIGNED NOT NULL,
 	`reservation_number` INT(11) UNSIGNED NOT NULL,
-	`date_entry` DATETIME NOT NULL,
-	`date_exit` DATETIME NOT NULL,
+	`start` DATETIME NOT NULL,
+	`end` DATETIME NOT NULL,
 	`number_days` INT(11) NOT NULL,
 	PRIMARY KEY (`id`)
 )
@@ -72,7 +73,7 @@ CREATE TABLE guests (
 	`id` INT(11) NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(100) NOT NULL,
 	`cpf` VARCHAR(14) NOT NULL,
-	`cell` INT(11) NOT NULL,
+	`cell` BIGINT(11) NOT NULL,
 	`number_companions` INT(11) NOT NULL,
 	`id_reservation` INT(11) NOT NULL,
 	`start` DATETIME NOT NULL,
