@@ -49,7 +49,7 @@ class GuestsController extends Controller
     {
     	$request->validate([
     		'name' => 'required|string',
-    		'cpf' => 'required|string',
+    		'cpf' => 'required|integer',
     		'cell' => 'required|integer',
     		'number_companions' => 'required|integer',
     		'date_entry' => 'required|date',
