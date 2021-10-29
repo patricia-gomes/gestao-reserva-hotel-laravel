@@ -11,10 +11,6 @@
 |
 */
 
-//Site
-Route::prefix('/')->group(function() {
-	Route::get('/', 'Site\HomeController@index');
-});
 
 //Login
 Route::get('/login', 'Auth\LoginController@index')->name('login');
